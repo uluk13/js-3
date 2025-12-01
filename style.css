@@ -1,30 +1,4 @@
-/* .trafic_lights{
-    width: 100px;
-    height: 225px;
-    margin-left: 600px;
-    margin-top: 100px;
-}
-.green{
-    width: 100px;
-    height: 75px;
-    border: 1px solid black;
-    border-radius: 100px;
-    display: block;
-}
 
-.red{
-    width: 100px;
-    height: 75px;
-    border: 1px solid black;
-    border-radius: 100px;
-}
-
-.yelow{
-    width: 100px;
-    height: 75px;
-    border: 1px solid black;
-    border-radius: 100px;
-} */
 body{
     padding: 20px;
 }
