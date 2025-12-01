@@ -1,4 +1,4 @@
-.trafic_lights{
+/* .trafic_lights{
     width: 100px;
     height: 225px;
     margin-left: 600px;
@@ -24,4 +24,34 @@
     height: 75px;
     border: 1px solid black;
     border-radius: 100px;
+} */
+body{
+    padding: 20px;
+}
+
+
+button{
+    height: 50px;
+    width: 50px;
+}
+
+.block {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.result {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.block-cursor{
+    margin-top: 50px;
+    height: 500px;
+    width: 500px;
+    border: 2px solid black;
 }
