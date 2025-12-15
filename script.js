@@ -1,178 +1,140 @@
-
-
-const students = [
+const moviesAndSeries = [
   {
-    id: 1,
-    name: "Tom",
-    age: 18,
-    city: "Bishkek",
-    grades: [5, 4, 3, 5],
-    hobbies: ["football", "gaming"],
-    isGraduated: false,
+    title: "Breaking Bad",
+    year: 2008,
+    genre: "Crime",
+    rating: 9.5,
+    seasons: 5,
+    duration: 47,
+    finished: true,
+    actors: ["Bryan Cranston", "Aaron Paul"],
+    country: "USA"
   },
   {
-    id: 2,
-    name: "Anna",
-    age: 20,
-    city: "Osh",
-    grades: [3, 2, 4, 3],
-    hobbies: ["reading", "painting", "yoga"],
-    isGraduated: true,
+    title: "Game of Thrones",
+    year: 2011,
+    genre: "Fantasy",
+    rating: 9.2,
+    seasons: 8,
+    duration: 55,
+    finished: true,
+    actors: ["Emilia Clarke", "Kit Harington"],
+    country: "USA"
   },
   {
-    id: 3,
-    name: "Bob",
-    age: 19,
-    city: "Karakol",
-    grades: [5, 5, 5, 4],
-    hobbies: [],
-    isGraduated: false,
+    title: "Stranger Things",
+    year: 2016,
+    genre: "Sci-Fi",
+    rating: 8.7,
+    seasons: 4,
+    duration: 50,
+    finished: false,
+    actors: ["Millie Bobby Brown", "Finn Wolfhard"],
+    country: "USA"
   },
   {
-    id: 4,
-    name: "Lisa",
-    age: 22,
-    city: "Bishkek",
-    grades: [4, 5, 5, 5],
-    hobbies: ["volleyball", "travel"],
-    isGraduated: true,
+    title: "Sherlock",
+    year: 2010,
+    genre: "Detective",
+    rating: 9.1,
+    seasons: 4,
+    duration: 90,
+    finished: true,
+    actors: ["Benedict Cumberbatch", "Martin Freeman"],
+    country: "UK"
   },
   {
-    id: 5,
-    name: "John",
-    age: 21,
-    city: "Talas",
-    grades: [2, 3, 2, 4],
-    hobbies: ["movies", "football"],
-    isGraduated: false,
+    title: "The Dark Knight",
+    year: 2008,
+    genre: "Action",
+    rating: 9.0,
+    seasons: 0,
+    duration: 152,
+    finished: true,
+    actors: ["Christian Bale", "Heath Ledger"],
+    country: "USA"
   },
   {
-    id: 6,
-    name: "Mila",
-    age: 23,
-    city: "Osh",
-    grades: [5, 4, 4, 5],
-    hobbies: ["reading", "cooking"],
-    isGraduated: true,
+    title: "Friends",
+    year: 1994,
+    genre: "Comedy",
+    rating: 8.9,
+    seasons: 10,
+    duration: 22,
+    finished: true,
+    actors: ["Jennifer Aniston", "Courteney Cox"],
+    country: "USA"
   },
   {
-    id: 7,
-    name: "Alex",
-    age: 19,
-    city: "Naryn",
-    grades: [3, 3, 4, 3],
-    hobbies: ["music", "football"],
-    isGraduated: false,
+    title: "The Matrix",
+    year: 1999,
+    genre: "Sci-Fi",
+    rating: 8.7,
+    seasons: 0,
+    duration: 136,
+    finished: true,
+    actors: ["Keanu Reeves", "Laurence Fishburne"],
+    country: "USA"
   },
   {
-    id: 8,
-    name: "Kate",
-    age: 20,
-    city: "Bishkek",
-    grades: [4, 4, 5, 5],
-    hobbies: ["dance", "photography"],
-    isGraduated: true,
+    title: "The Witcher",
+    year: 2019,
+    genre: "Fantasy",
+    rating: 8.1,
+    seasons: 3,
+    duration: 60,
+    finished: false,
+    actors: ["Henry Cavill", "Anya Chalotra"],
+    country: "USA"
   },
   {
-    id: 9,
-    name: "Nick",
-    age: 18,
-    city: "Talas",
-    grades: [5, 5, 4, 5],
-    hobbies: ["gaming", "reading"],
-    isGraduated: false,
+    title: "Interstellar",
+    year: 2014,
+    genre: "Sci-Fi",
+    rating: 8.6,
+    seasons: 0,
+    duration: 169,
+    finished: true,
+    actors: ["Matthew McConaughey", "Anne Hathaway"],
+    country: "USA"
   },
   {
-    id: 10,
-    name: "Sara",
-    age: 21,
-    city: "Osh",
-    grades: [4, 5, 3, 4],
-    hobbies: ["travel", "yoga"],
-    isGraduated: true,
-  },
+    title: "Money Heist",
+    year: 2017,
+    genre: "Crime",
+    rating: 8.2,
+    seasons: 5,
+    duration: 45,
+    finished: true,
+    actors: ["Úrsula Corberó", "Álvaro Morte"],
+    country: "Spain"
+  }
 ];
 
-const cards = document.querySelectorAll(".card");
-
-for (let i = 0; i < students.length && i < cards.length; i++) {
-  const s = students[i];
-  const card = cards[i];
-
-  const name = card.querySelector(".name");
-  const age = card.querySelector(".age");
-  const city = card.querySelector(".city");
-  const grades = card.querySelector(".grades");
-  const hobbies = card.querySelector(".hobbies");
-
-  name.innerText = s.name;
-  age.innerText = "Возраст: " + s.age;
-  city.innerText = "Город: " + s.city;
-  grades.innerText = "Оценки: " + s.grades;
-  hobbies.innerText = "Хобби: " + s.hobbies;
-
-  let statusDot = card.querySelector(".status");
-  statusDot.style.backgroundColor = s.isGraduated === true ? "green" : "red";
-}
-
-// Функция поиска студента по имени (регистр не важен)
-const searchBtn = document.getElementById("searchBtn");
-const searchInput = document.getElementById("searchInput");
-
-searchBtn.addEventListener("click", () => {
-  const searchName = searchInput.value.trim().toLowerCase();
-
-  if (!searchName) {
-    alert("Пожалуйста, введите имя студента");
-    return;
-  }
-
-  let foundIndex = -1;
-
-  for (let i = 0; i < students.length; i++) {
-    if (students[i].name.toLowerCase() === searchName) {
-      foundIndex = i;
-      break;
-    }
-  }
-
-  if (foundIndex !== -1) {
-    alert(`Индекс найденного пользователя: ${foundIndex}`);
-  } else {
-    alert("Пользователь не найден");
-  }
+moviesAndSeries.forEach(i => {
+  console.log(`${i.title} — рейтинг: ${i.rating}`);
 });
 
 
+console.log(moviesAndSeries.map(i => {
+  return` ${i.title} (${i.year}) - ${i.seasons} сезонов`
+}));
 
-console.log(students.map(s => s.name));
+console.log(moviesAndSeries.filter((i) => i.finished === false));
 
+console.log(moviesAndSeries.find((i) => i.seasons >= 5));
 
-console.log(students.filter(s => s.age <= 19));
+console.log(moviesAndSeries.some((i) => i.rating >= 9 ));
 
+console.log(moviesAndSeries.every((i) => i.year >=2000));
 
-
-console.log(students.filter(s => s.isGraduated).length);
-
-
-console.log([...students].reverse());
-
-
-console.log(students.map(s => ({
-  id: s.id,
-  name: s.name,
-  grade: s.grades.reduce((a, b) => a + b) / s.grades.length
-})));
+const rating = moviesAndSeries.reduce((a,b) => a + b.rating, 0) / moviesAndSeries.length;
+console.log("Средний рейтинг:",rating.toFixed(2));
 
 
-const youngest = students.reduce((a, b) => b.age < a.age ? b : a);
-const oldest = students.reduce((a, b) => b.age > a.age ? b : a);
+console.log(moviesAndSeries.sort((a,b) => b.rating - a.rating));
 
-const result = oldest.age - youngest.age;
 
-console.log("Самый младший:", youngest);
-console.log("Самый старший:", oldest);
-console.log("Разница в возрасте:", result);
 
 
 
