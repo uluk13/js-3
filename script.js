@@ -20,7 +20,9 @@ class Series extends Movie {
   }
 
   getInfo() {
-    return `${this.title} (${this.year}) — ${this.seasons} сезонов, рейтинг ${this.getRating()}`;
+    return `${this.title} (${this.year}) — ${
+      this.seasons
+    } сезонов, рейтинг ${this.getRating()}`;
   }
 }
 
